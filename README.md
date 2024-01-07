@@ -107,6 +107,14 @@ Azure Policy - Use Cases
 -Inherit Tags
 
 
+Initiative
+Chaining policy definitions so that they can be assigned as a single item and the compliance can be evaluated.
+
+Use Case - Initiative
+Restrict user from creating a resource type of Cosmos DB + Other resources should have a Tag named a Cost Center + Allowed location is East Us and West Us + Azure Backup is enabled for VMs + Allowed VM SKUs like BS, DSv2.
+
+Azure Policy takes precedence over Owner roles as well. Owner roles cannot bypass Azure Policy.
+
 
 
 
