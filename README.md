@@ -1,7 +1,7 @@
 # az-104-interviewquestions
 
 Azure AD
-
+-----------
 User, Group, Service Principal and Managed Identity.
 
 User Assigned Managed Identity and System Assigned Managed Identity.
