@@ -308,3 +308,28 @@ Maximum number of records allowed to a recordset is 20 nd they need to be unique
 
 DNS Dataview tool for verifying the record sets.
 
+Private DNS Zones 
+----------------
+Name resolution for services deployed within the Azure Virtual Network.
+
+NSG
+-----
+
+Consists of Inbound and Outbound rules.
+Filters traffic incoming and outgoing based on this rules from VNET.
+Rulesets
+Associated with Subnets or Network Interfaces
+Multiple subnets and network interfaces can be associated with single NSG
+Rules applied at subnet and network interfaces is evaluated separately
+
+Is based on rules. Everything is evaluated based on priority.
+Default rules cannot be modified or deleted.
+They can be overridden by creating rules with higher priority.
+Rules can be created based on following attributes besides ip details:
+Service: Http, Https, Ssh, RDP
+
+Port range:
+
+Priority: Lower number higher priority. Range from 100-4096. Values in 65000 range is for default rules.
+
+Action: Allow or Deny
