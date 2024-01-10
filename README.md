@@ -291,4 +291,20 @@ In summary, the need for additional firewall and access control settings depends
 
 Azure DNS
 ----------
+DNS Hosting
+Used to create safe and reliable DNS Zones.
+Create records inside this Zones.
+
+Naming Convention
+Zone Name should be unique in different resource groups.
+NOTE:- You can have same zone within multiple resource groups, in this case name servers will be different for these Zones.
+
+Delegated Zones
+
+RecordSets
+Records having same name and type are grouped together to form recordsets.
+
+Maximum number of records allowed to a recordset is 20 nd they need to be unique.
+
+DNS Dataview tool for verifying the record sets.
 
