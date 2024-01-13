@@ -333,3 +333,90 @@ Port range:
 Priority: Lower number higher priority. Range from 100-4096. Values in 65000 range is for default rules.
 
 Action: Allow or Deny
+
+Azure Firewall
+--------------
+Highly Available and Scalable
+Redundancy
+Multiple types of rules
+Threat Intelligence
+Public IP Support
+
+NSG is basic firewall and operates at the network layer 4. Filters traffic at individual resources.
+Azure Firewall is managed and operates at the application layer 7. Filters traffic at the VNET level.
+
+Azure Firewalls ar Global and can support multiple subnets.
+
+Azure Firewall blocks traffic by default. 
+
+3 types of Azure Firewall rules are:
+----------------------------------------
+NAT Rules - Routing Rule that allows traffic from public ip address to private ip address.
+Network Rules
+Application Rules
+
+https://petri.com/the-three-different-types-of-rules-that-are-in-the-azure-firewall/
+
+
+Virtual Machines Planning
+-------------------------
+
+Networking - Address Space to be planned based on Number of Hosts planned to be created. Size of the Hosts. IP Address Space should not overlap. Need for Subnet or Public IPs.
+
+Naming Convention - Environment, role, service, region to VM names.
+
+Location - Check availability of VM Sizes in different Azure Regions. Choos Low Cost regions if ok with data residency. Azure has 60+ regions.
+
+Pricing - Reserved instances or pay-as-you-go pricing model for contract done for 1 to 3 yrs period. Spot VM for low priority development. Licensing cost can be reduced by Azure Hybrid Benefits.
+
+Reserved instances are commitments to specific VM Sizes in specific regions for 1 or 3 year period providing discount as compared to pay-as-you-go pricing model.
+https://learn.microsoft.com/en-us/answers/questions/108078/reserved-instances-vs-spot
+
+Virtual Machine Sizing
+----------------------
+
+General Purpose - Development and Testing, small to medium DBs, low to medium traffic webservers
+
+Compute Optimized - High CPU to memory ratio - Web Servers, Network Appliances, Batch Processes, Application Server
+
+Memory Optimized - High Memory to CPU ratio - Relational DB, Caches, In-memory analytics
+
+Storage Optimized - High Disk throughput and io - Big Data No SQL, Transaction DB, Data Warehouse
+
+GPU - Graphics rendering, Video Editing and AI Deep Learning
+
+HPC - Fastest and most Powerful VMs
+
+Confidential Computing - Banks and Hospitals for PII data
+
+
+Virtual Machine Storage
+-----------------------
+OS Disk - OS
+Temporary Disk - Temp Data like page files. Data lost on resizing the VM. Ramins on the host.
+Data Disk - Application Data
+OS Disk and Data Disk are stored on Azure Blob Storage.
+
+NOTE: -If the Size of the VM is small, the number of Data Disks that could be accomodated will also be less.
+
+Performance Tiers - Standard HDD, Standard SSD, Premium SSD, Ultra SSD for IOPS and Performance
+
+Management - Managed Disk and UnManaged disk. UnManaged Disk, customer to own the management or storage of VHD file on Azure Storage. Managed Disk is managed by Microsoft and is recommened by Microsoft.
+
+Connecting to VMs
+-----------------
+
+Public IP
+
+JumpBox
+
+Azure Bastion
+
+
+
+
+
+
+
+
+
