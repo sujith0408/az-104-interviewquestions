@@ -413,6 +413,17 @@ JumpBox
 Azure Bastion
 
 
+High Availability
+-----------------
+
+Geography is an area where we have multiple regions.
+
+Each region has multiple DataCentres.
+
+DataCentre grouped together are called Availability Zones. Each AZ has power, cooling and networking component.
+
+
+
 
 
 
