@@ -416,13 +416,33 @@ Azure Bastion
 High Availability
 -----------------
 
+3 reasons for downtime:
+
+Unplanned Hardware Maintenance - When there is a problem with physical server hosting VM, Azure Predicts it and does Live Migration of VM from one physical server to other which is healthy. VM will be paused for sometime leading to performance issues.
+
+Unexpected downtime - Failure of networking, storage or rack issues. Azure will heal the VM by re-deploying the VM to health Server in same DataCenter. This will cause re-boot operation resulting in loss of data in temp drive.
+
+Planned Maintenance - Updates and maintenance for security, reliability and performance of hardware on which VMs are running. Most of the time done without any downtime.
+
+
+
 Geography is an area where we have multiple regions.
 
 Each region has multiple DataCentres.
 
+Availability Zones
+------------------
 DataCentre grouped together are called Availability Zones. Each AZ has power, cooling and networking component.
 
+Availability Set
+----------------
 
+Multiple VMs to have control where the VM is deployed. Gives 99.95% SLA. Single VM is a single point of failure. If power goes down, then it leads to unavailability. Availability Set is at DataCenter level. If DataCenter goes down then VM goes down, hence Availability Zone.
+2 Concepts of Availability Set
+
+- Update Domain - During Planned Maintenance physical servers may need a reboot and that would take your VM offline. By deploying the VMs in multiple Fault Domains, Microsoft ensures that only one Domain is updated at a time. With Update Domain, Azure can ensure sequential update are done on physical servers ensuring availability. There are 5 Update Domains. Can update upto 20. Combination of Update and Fault Domain is called Availability Set.
+
+- Fault Domain represent physical servers/racks within a DataCenter that share common networking, power and cooling.Deploying VMs across this Fault Domains, we could prevent the VM from hardware failure.
 
 
 
