@@ -445,6 +445,18 @@ Multiple VMs to have control where the VM is deployed. Gives 99.95% SLA. Single 
 - Fault Domain represent physical servers/racks within a DataCenter that share common networking, power and cooling.Deploying VMs across this Fault Domains, we could prevent the VM from hardware failure.
 
 
+Azure Load Balancer
+--------------------
+Load Balancing Rules
+Inbound NAT Rules to specific machine on specific port for targeted access.
+Outbound Rules
+
+Sesssion Persistence
+--------------------
+None  - also called 5 tuple hash using Source IP, Destination IP, Source Port, Destination Port, Protocol to distribute traffic to the server. Useful for Stateless Application where session affinity is not required.
+Client IP - also called 2 tuple hash based on Source IP and Destination IP. Useful for scenarios where we need to maintain the user session within the same session such E-commerce website. Sessions that need consistent server-side cache.
+Client IP and Protocol- 3 tuple hash based on Source IP, Destination IP and Protocol. Useful for scenarios where different services on the same VM need to maintain sessions such as secure and non-secure connections to diff servers and services.
+
 
 
 
