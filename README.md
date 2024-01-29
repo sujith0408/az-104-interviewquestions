@@ -447,6 +447,8 @@ Multiple VMs to have control where the VM is deployed. Gives 99.95% SLA. Single 
 
 Azure Load Balancer
 --------------------
+Layer 4 LB over TCP/UDP.
+Supports only VM and VMSS as the backend pool.
 Load Balancing Rules
 Inbound NAT Rules to specific machine on specific port for targeted access.
 Outbound Rules
@@ -457,6 +459,14 @@ None  - also called 5 tuple hash using Source IP, Destination IP, Source Port, D
 Client IP - also called 2 tuple hash based on Source IP and Destination IP. Useful for scenarios where we need to maintain the user session within the same session such E-commerce website. Sessions that need consistent server-side cache.
 Client IP and Protocol- 3 tuple hash based on Source IP, Destination IP and Protocol. Useful for scenarios where different services on the same VM need to maintain sessions such as secure and non-secure connections to diff servers and services.
 
+
+Azure Application Gateway
+-------------------------
+Layer 7 LB over HTTP/HTTPS/HTTP2/WebSocket.
+Web Application Firewall can be added as optional component to the App Gateway.
+Routing done based on url also called path based request routing. Can host multiple websites behind the App Gateway.
+Url Rewrite, SSL Termination, Rewriting http headers, Custom Error Pages supported.
+Supports VM, VMSS, Azure App Services, Deployment Slots and other servers deployed in other cloud providers and on-premise servers.
 
 
 
