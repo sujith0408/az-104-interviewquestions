@@ -467,6 +467,54 @@ Web Application Firewall can be added as optional component to the App Gateway.
 Routing done based on url also called path based request routing. Can host multiple websites behind the App Gateway.
 Url Rewrite, SSL Termination, Rewriting http headers, Custom Error Pages supported.
 Supports VM, VMSS, Azure App Services, Deployment Slots and other servers deployed in other cloud providers and on-premise servers.
+Path-based and Multi-Site routing.
+
+Other Load Balancing Solutions
+------------------------------
+Azure Front Door
+----------------
+Provides fast content delivery.
+Global solution and makes use of Microsoft Edge network.
+Path-based and Multi-Site routing available and also WAF available as optional component.
+
+Azure Traffic Manager
+---------------------
+DNS-based Load Balancer.
+Finds best endpoint based on routing.
+Routing logic includes Priority, Weighted, Geography.
+Have nested profiles in Azure Traffic Manager.
+Does not care about protocol because its a DNS based load balancing solution.
+
+Network Watcher
+---------------
+Suite of tools to designed to monitor, diagnose and gain insight into network performance and network health in the Azure environment.
+
+IP Flow Verify - Verify whether packets allowed to move to and from the VM
+
+Next Hop - Verify whether the packet reaches the target in the VNET
+
+VPN Diagnostics - Verify whether the connectivity from on-premise to Azure works
+
+NSG Flow Logs - Verify Egress and Ingress traffic through NSG
+
+Connection Troubleshoot - Verify any connectivity issues
+
+Topology - Visual representation of Azure Resources within a VNET. Helps in understanding the architecture.
+
+Azure Storage Accounts
+----------------------
+Standard and Premium
+
+
+
+
+
+
+
+
+
+
+
 
 
 
