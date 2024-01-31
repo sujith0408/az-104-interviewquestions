@@ -505,7 +505,13 @@ Azure Storage Accounts
 ----------------------
 Standard and Premium
 
-
+Azure Storage Redundancy
+------------------------
+LRS - 3 Copies on fault domain in single DC single region. Prevents hardware failure but not the DC failure.
+ZRS - 3 Copies on 3 Zones(DC) in single region. Prevents the DC failure but not Region failure.
+GRS - 3 Copies on fault domain in single DC primary region. Geo-Replication aysnc on 3 Copies on fault domain in secondary region. LRS + LRS. Secondary region is ReadOnly and will be available when there is a failover on primary region being unavailable. Prevents Region failure. Failover can be customer or Microsoft initiated. If new data needs to be written to Primary Region when is down, then application mechanism using Queues should be implemented.
+RA-GRS - Same as LRS + LRS. But data can be read from Secondary Region without failover and also on failover it works like GRS.
+GZRS - ZRS + LRS. 3 copies in Zones of Primary Region. 3 Copies in fault domain of Secondary Region.
 
 
 
