@@ -513,6 +513,129 @@ GRS - 3 Copies on fault domain in single DC primary region. Geo-Replication aysn
 RA-GRS - Same as LRS + LRS. But data can be read from Secondary Region without failover and also on failover it works like GRS.
 GZRS - ZRS + LRS. 3 copies in Zones of Primary Region. 3 Copies in fault domain of Secondary Region.
 
+Accessing Storage Endpoints
+---------------------------
+<protocol>://<storage-account-name>.<service>.core.windows.net
+
+Storage Tools
+------------
+Azure Storage explorer
+
+Import/Export Service
+
+AzCopy - Supports AWS/GCP
+
+Storage access level
+--------------------
+Private
+
+Blob
+
+Container
+
+To access a  blob that has Private access level, we need to use Shared access Key or Shared Access Signature Token or Azure AD.
+
+Storage Access Tier
+-------------------
+Hot - Frequent Read - Storage Cost High Access Cost Low - Real Time Data. Available at Storage Account level.
+
+Cool - InFrequent/occassional Read - Storage Cost Medium Access Cost Medium - Short term backup files. Available at Storage Account level.
+
+Archive - Rarely accessed - Storage Cost Low Access Cost High - Compliance data 
+
+***Archive access tier only available at the Object ie. file level.
+
+Blob Lifecycle Management
+-------------------------
+Changing Data tier from one tier to another can be automated through BLM with GP V2 account by defining Rules.
+Policy based transition
+Delete Blobs and Snapshots
+Filtering Options
+Target different types
+
+Azure File Share
+-------------------
+Enterprise Grade File share
+Supports Windows, Linux, MacOS
+Supports backup and data restore for recovery
+Port 445 should be open for SMB traffic
+
+Secure Storage Account endpoint
+-------------------------------
+Secure it using networking rules.
+
+Network rules are used to control public access to Storage account
+
+Service Endpoints are used to restrict access to specific VNETs
+
+Firewall - Allow Ip ranges from internet or on-premise
+
+Disable public access through Private Endpoints
+
+Storage Security Capabilities
+-----------------------------
+Encryption
+
+Authentication
+
+Data in transit is secured using https/smb30
+
+OS like windows, linux, macOs can be encrypted using Disk encryption
+
+Shared Access Signature
+
+Storage Service Encryption(SSE) & Azure Disk Encryption (ADE)
+-------------------------------------------------------------
+SSE
+---
+Protection
+Compliance
+Strong Cipher
+Bring Your Own Keys called Customer Managed Keys. CMK needs to be stored in the Key Vault and Storage service will retrieve the key from the Key vault for encryption and decryption.
+CMK applies only to Blobs and Files
+
+ADE
+---
+Disk to encrypt
+--------------
+None
+OS Disk
+OS Disk & Data Disks
+
+ADE uses Bitlocker for windows and DMCrypt for Linux
+
+ADE cannot be used with CMK, it can only be used with Platform managed keys.
+
+Encryption at host also available.
+
+Configuring Storage Access
+--------------------------
+Storage Account Keys - act like root passwords
+-------------------
+2 keys - primary key and secondary key
+
+Shared Access Signature
+
+Microsoft Entra ID
+
+Anonymous access
+
+Maintain this keys in the Azure Keyvault and rotate it periodically.
+
+Shared Access Signature - fine grain controlled with expiration time
+-----------------------
+fine-tuned access
+
+
+
+
+
+
+
+
+
+
+
 
 
 
