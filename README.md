@@ -602,7 +602,7 @@ None
 OS Disk
 OS Disk & Data Disks
 
-ADE uses Bitlocker for windows and DMCrypt for Linux
+ADE uses Bitlocker for windows and DM-Crypt for Linux
 
 ADE cannot be used with CMK, it can only be used with Platform managed keys.
 
@@ -625,6 +625,24 @@ Maintain this keys in the Azure Keyvault and rotate it periodically.
 Shared Access Signature - fine grain controlled with expiration time
 -----------------------
 fine-tuned access
+
+Service SAS - Access to Specific resource in Storage account
+
+Account SAS - Access to Multiple resources in Storage account
+
+User-delegation SAS - Secured with Microsoft Entra ID
+
+Entra ID
+---------
+Secure way authenticating
+
+Requires dedicated RBAC roles
+
+
+Administer Data Protection
+--------------------------
+
+
 
 
 
