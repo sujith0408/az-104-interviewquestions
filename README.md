@@ -642,6 +642,71 @@ Requires dedicated RBAC roles
 Administer Data Protection
 --------------------------
 
+Azure Backup
+
+Soft Delete for Data Protection
+
+Azure Site Recovery - BCP
+
+VMs, Managed Disks --> Cache Storage Account in Region A
+
+On Failover, the Managed Disks gets synced on Region B and VM gets created.
+
+Resynchronizing.
+
+Recovery Service Vault can backup only VMs and File Shares.
+
+Backup Vault can backup Storage Account and SQL DB.
+
+Administer Monitoring
+----------------------
+
+Azure Monitor
+---------------
+Metrics - Numerical data that represent state of a system at a given point. Zero Configuration required. Time-Series. Near Real-time data.
+CPU
+Network
+
+Logs - Structured records that capture events and includes timestamp and resource identifiers. Organized as records. Requires additional configuration. Rich Query Language. KQL.
+
+Data Sources
+-------------
+Application
+
+OS
+
+Azure Resource
+
+Azure Subscription
+
+Azure Tenant
+
+Custom
+
+Azure Activity Logs - enabled by default retention - 90days, if retention needs to be exceeded then diagnostic setting needs to be enabled and sent to Log Analytics Workspace
+-------------------
+Subscription Level Logging
+
+Auditing
+
+Retention
+
+Query Data
+
+
+Log Analytics Workspace
+-----------------------
+Stores Application Insights and Sentinel data
+
+
+
+
+
+
+
+
+
+
 
 
 
